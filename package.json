@@ -1,0 +1,30 @@
+{
+  "name": "unit-10-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j92pruitt/team-profile-gen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j92pruitt/team-profile-gen/issues"
+  },
+  "homepage": "https://github.com/j92pruitt/team-profile-gen#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
