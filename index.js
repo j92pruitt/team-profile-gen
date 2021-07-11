@@ -105,7 +105,7 @@ function createTeamMember(job) {
                 runSelection
             );
     } else {
-        Error(`Unexpected job selection: ${job}`)
+        console.log(Error(`Unexpected job selection: ${job}`))
     }
 }
 
