@@ -1,0 +1,5 @@
+# Commit folder to repo but not any of the contained files.
+
+*
+*/
+!.gitignore
