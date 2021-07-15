@@ -1,5 +1,5 @@
 const { describe, it, expect} = require('@jest/globals');
-const Prompt = require('../lib/prompt');
+const Prompt = require('../lib/Prompt');
 const inquirer = require('inquirer');
 
 jest.mock('inquirer')

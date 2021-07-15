@@ -1,4 +1,4 @@
-const Prompt = require("./lib/prompt");
+const Prompt = require("./lib/Prompt");
 
 managerPrompt = new Prompt( [
     {
