@@ -1,4 +1,7 @@
+const Engineer = require("./lib/Engineer");
 const Prompt = require("./lib/Prompt");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
 
 managerPrompt = new Prompt( [
     {
@@ -78,6 +81,8 @@ internPrompt = new Prompt( [
     }
 ] )
 
+const team = [];
+
 function init() {
     createTeamMember('Manager')
 }
@@ -85,25 +90,22 @@ function init() {
 function createTeamMember(job) {
     if (job === 'Engineer') {
         engineerPrompt.query()
-            .then(
-                // Placeholder for engineer creation
-                // Placeholder for adding engineer to team
-                runSelection
-            );
+            .then( (answers) => {
+                team.push( new Engineer(answers.name, answers.id, answers.email, answers.username) );
+                return runSelection()
+            })
     } else if (job === 'Intern') {
         internPrompt.query()
-            .then(
-                // Placeholder for intern creation
-                // Placeholder for adding intern to team
-                runSelection
-            );
+            .then( (answers) => {
+                team.push( new Intern(answers.name, answers.id, answers.email, answers.school) );
+                return runSelection()
+            })
     } else if (job === 'Manager') {
         managerPrompt.query()
-            .then(
-                // Placeholder for manager creation
-                // Placeholder for adding manager to team
-                runSelection
-            );
+            .then( (answers) => {
+                team.push( new Manager(answers.name, answers.id, answers.email, answers.office) );
+                return runSelection()
+            })
     } else {
         console.log(Error(`Unexpected job selection: ${job}`))
     }
@@ -115,7 +117,7 @@ function runSelection() {
             ({choice : choice}) => {
                 console.log(choice)
                 if (choice === 'Finished adding team members') {
-                    return console.log('Generating HTML');
+                    return console.log(team);
                  } else {
                     return createTeamMember(choice);
                  }
