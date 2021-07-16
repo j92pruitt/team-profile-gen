@@ -13,11 +13,11 @@ describe('Manager', () => {
             expect(obj).toBeInstanceOf(Employee);
         })
 
-        it('should create an object with "office" property set to "office" parameter.', () => {
+        it('should create an object with "officeNumber" property set to "officeNumber" parameter.', () => {
 
             const obj = new Manager('Manny', '1', 'manny@test.com', '21');
 
-            expect(obj).toHaveProperty('office', '21');
+            expect(obj).toHaveProperty('officeNumber', '21');
         })
     })
 
