@@ -119,7 +119,12 @@ function runSelection() {
             ({choice : choice}) => {
                 console.log(choice)
                 if (choice === 'Finished adding team members') {
-                    return console.log(team);
+                    let teamCards = ``
+                    team.forEach(member => {
+                        teamCards += member.generateHtml()
+                    });
+
+                    writeHtml(teamCards)
                  } else {
                     return createTeamMember(choice);
                  }
@@ -127,12 +132,10 @@ function runSelection() {
         );
 }
 
-function writeHtml() {
-    teamCards = `<p>Cards go here</p>`
+function writeHtml(teamCards) {
     fs.writeFile('./team-page.html',template.htmlTemplate(teamCards),() => {
 
     })
 }
 
-// init();
-writeHtml()
+init();
