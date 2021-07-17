@@ -2,6 +2,8 @@ const Engineer = require("./lib/Engineer");
 const Prompt = require("./lib/Prompt");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
+const template = require('./src/html-template')
+const fs = require('fs')
 
 managerPrompt = new Prompt( [
     {
@@ -125,4 +127,12 @@ function runSelection() {
         );
 }
 
-init();
+function writeHtml() {
+    teamCards = `<p>Cards go here</p>`
+    fs.writeFile('./team-page.html',template.htmlTemplate(teamCards),() => {
+
+    })
+}
+
+// init();
+writeHtml()
